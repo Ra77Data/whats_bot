@@ -1,0 +1,6 @@
+node_modules/
+auth_info/
+session/
+*.json
+!package.json
+.DS_Store

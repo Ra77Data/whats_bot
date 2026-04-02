@@ -1,0 +1,17 @@
+{
+  "name": "whatsapp-support-bot",
+  "version": "1.0.0",
+  "description": "Bot de WhatsApp para soporte técnico",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.4.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "pino": "^8.16.1",
+    "qrcode": "^1.5.3"
+  }
+}

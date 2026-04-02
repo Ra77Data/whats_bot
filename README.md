@@ -1,9 +1,3 @@
-¡Hola! Qué buen proyecto para sumar a un portfolio. Un bot de WhatsApp que no requiere Puppeteer/Playwright (navegadores pesados) es un gran punto a favor para demostrar conocimientos de optimización de recursos.
-
-He corregido el texto en español para que suene más profesional y técnico, y luego he realizado la traducción al inglés manteniendo ese tono de "desarrollador que sabe lo que hace".
-
----
-
 ## 🇪🇸 Versión Corregida (Español)
 
 # WhatsApp Support Bot (Seguridad y Telecomunicaciones)

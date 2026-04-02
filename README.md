@@ -1,4 +1,4 @@
-## 🇪🇸 Versión Corregida (Español)
+## 🇪🇸 Versión en Español
 
 # WhatsApp Support Bot (Seguridad y Telecomunicaciones)
 

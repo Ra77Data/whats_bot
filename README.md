@@ -1,51 +1,118 @@
-# Bot de Soporte - WhatsApp (Seguridad y Telecomunicaciones)
+¡Hola! Qué buen proyecto para sumar a un portfolio. Un bot de WhatsApp que no requiere Puppeteer/Playwright (navegadores pesados) es un gran punto a favor para demostrar conocimientos de optimización de recursos.
 
-Este proyecto está construido en **Node.js** usando la librería ligera `@whiskeysockets/baileys`. Este stack evita requerir navegadores completos internamente, haciéndolo extremadamente veloz y perfectamente compatible en consumo de memoria para un servidor **Linux On-Premise**.
-
-## Pre-Requisitos
-- **Node.js** v18 o superior.
-- **npm** (Package Manager).
-
-## 1. Etapa de Desarrollo (MacBook Local)
-
-1. Descarga el stack de librerías. Abre una Terminal dentro de este directorio y corre:
-   ```bash
-   npm install
-   ```
-2. Inicia los motores del Dashboard web y de WhatsApp al mismo tiempo:
-   ```bash
-   npm start
-   ```
-3. Ingresa utilizando Safari o Chrome a:
-   👉 **http://localhost:3000**
-4. La contraseña por defecto del panel es: `admin123` (editable desde código fuente o variable de entorno `DASHBOARD_PASSWORD`).
-5. Se generará un **Código QR**. Escanéalo mediante tu móvil de área de soporte. Automáticamente desaparecerá y dirá "Conectado".
-
-### Sesión Persistente (No más QRs)
-Automáticamente verás crearse un directorio oculto a la vista llamado `baileys_auth_info` (junto al código fuente). Allí viven encripatos los tokens.
-Si por alguna razón cierras el proceso de Node (o apagas la Mac), _cuando vuelvas a abrir el `npm start`, el bot regresará inmediatamente sin escanear el QR_.
-> Nota: Si cambias de número WhatsApp, simplemente elimina esta carpeta entera y te dará un QR nuevo.
+He corregido el texto en español para que suene más profesional y técnico, y luego he realizado la traducción al inglés manteniendo ese tono de "desarrollador que sabe lo que hace".
 
 ---
 
-## 2. Migración a Servidor Linux (On-Premise)
+## 🇪🇸 Versión Corregida (Español)
 
-A la hora de llevar esto a un VPS Local Ubuntu/Debian u otra variante Linux, en vez de mantener la terminal abierta 24/7 utilizaremos **PM2**, un gestor de procesos que mantiene Node vivo en el servidor en el fondo.
+# WhatsApp Support Bot (Seguridad y Telecomunicaciones)
 
-1. Instala PM2 como root globalmente en Linux:
+Este proyecto consiste en un bot de soporte técnico automatizado construido en **Node.js** utilizando la librería ligera `@whiskeysockets/baileys`. Al ser una implementación basada en sockets, evita el uso de navegadores completos, lo que garantiza una ejecución extremadamente veloz y un consumo de memoria mínimo, ideal para servidores **Linux On-Premise** o VPS con recursos limitados.
+
+## Requisitos Previos
+- **Node.js** v18 o superior.
+- **npm** (Gestor de paquetes).
+
+## 1. Etapa de Desarrollo (Entorno Local)
+
+1. **Instalación de dependencias:** Abre una terminal en el directorio raíz y ejecuta:
+   ```bash
+   npm install
+   ```
+2. **Inicio de servicios:** Inicia el Dashboard web y el cliente de WhatsApp simultáneamente:
+   ```bash
+   npm start
+   ```
+3. **Acceso al Panel:** Ingresa desde tu navegador (Chrome, Safari, Edge) a:
+   👉 **http://localhost:3000**
+4. **Autenticación:** La contraseña por defecto es `admin123` (configurable mediante la variable de entorno `DASHBOARD_PASSWORD` o directamente en el código fuente).
+5. **Vinculación:** Se generará un **Código QR** en el panel. Escanéalo con el dispositivo móvil destinado al soporte. Una vez vinculado, el estado cambiará automáticamente a "Conectado".
+
+### Sesión Persistente
+El sistema genera automáticamente un directorio llamado `baileys_auth_info` donde se almacenan los tokens de sesión de forma segura. 
+Si el proceso de Node se detiene o el equipo se reinicia, al ejecutar `npm start` nuevamente, **el bot recuperará la sesión automáticamente** sin necesidad de escanear el QR.
+> **Nota:** Si deseas cambiar el número de WhatsApp vinculado, simplemente elimina la carpeta `baileys_auth_info` y reinicia el servicio.
+
+---
+
+## 2. Despliegue en Servidor Linux (On-Premise)
+
+Para entornos de producción (VPS o servidores locales Ubuntu/Debian), se recomienda el uso de **PM2**. Este gestor de procesos garantiza que el bot se mantenga en ejecución constante en segundo plano.
+
+1. **Instalación global de PM2:**
    ```bash
    sudo npm install -g pm2
    ```
-2. Sube esta carpeta al servidor (podés comprimirla en zip, mandarla por SFTP o vía Git). Repite en el servidor comando de librerías: `npm install`.
-3. Arranca el daemon del bot para el sistema:
+2. **Preparación:** Transfiere la carpeta al servidor (vía Git, SFTP o SCP) y ejecuta `npm install` dentro del directorio.
+3. **Ejecución del Daemon:**
    ```bash
    pm2 start server.js --name "whatsapp-support"
    ```
-4. (Opcional) Guarda el entorno vivo para sobrevivir los reinicios de hardware del VPS:
+4. **Persistencia del sistema:** (Opcional) Configura el proceso para que se inicie automáticamente tras un reinicio del hardware:
    ```bash
    pm2 save
    pm2 startup
    ```
-5. Accede libremente vía web al servidor mediante su IP pública/privada en el puerto 3000: `http://<IP_LINUX>:3000`, e ingresas con la contraseña para volver a vincular el código QR en la nueva máquina.
+5. **Acceso Remoto:** Accede al panel mediante la dirección IP de tu servidor en el puerto 3000: `http://<IP_DEL_SERVIDOR>:3000`.
 
-¡Fin! Disfruten de la operativa de soporte.
+---
+
+## 🇺🇸 English Version
+
+# WhatsApp Support Bot (Security & Telecommunications)
+
+This project is a technical support bot built with **Node.js** using the lightweight library `@whiskeysockets/baileys`. This stack bypasses the need for full headless browsers, making it extremely fast and highly memory-efficient—perfect for **On-Premise Linux** servers or resource-constrained VPS environments.
+
+## Prerequisites
+- **Node.js** v18 or higher.
+- **npm** (Package Manager).
+
+## 1. Development Stage (Local Environment)
+
+1. **Install dependencies:** Open a terminal in the project directory and run:
+   ```bash
+   npm install
+   ```
+2. **Launch services:** Start both the Web Dashboard and the WhatsApp engine simultaneously:
+   ```bash
+   npm start
+   ```
+3. **Access the Dashboard:** Open your browser (Chrome, Safari, Edge) and go to:
+   👉 **http://localhost:3000**
+4. **Authentication:** The default password is `admin123` (customizable via the `DASHBOARD_PASSWORD` environment variable or within the source code).
+5. **Linking:** A **QR Code** will be displayed. Scan it using your dedicated support mobile device. The status will automatically switch to "Connected" once paired.
+
+### Persistent Session
+A directory named `baileys_auth_info` is automatically created to store encrypted session tokens.
+If the Node process is closed or the machine restarts, running `npm start` will **immediately restore the session** without requiring a new QR scan.
+> **Note:** To switch the WhatsApp account, simply delete the `baileys_auth_info` folder and restart the service.
+
+---
+
+## 2. Linux Server Deployment (On-Premise)
+
+To deploy this in a production environment (Ubuntu/Debian VPS or local server), we use **PM2**, a process manager that keeps the Node application running in the background.
+
+1. **Install PM2 globally:**
+   ```bash
+   sudo npm install -g pm2
+   ```
+2. **Setup:** Upload the project folder to your server (via Git, SFTP, or SCP) and run `npm install`.
+3. **Start the daemon:**
+   ```bash
+   pm2 start server.js --name "whatsapp-support"
+   ```
+4. **Enable Startup Persistence:** (Optional) Ensure the process survives hardware reboots:
+   ```bash
+   pm2 save
+   pm2 startup
+   ```
+5. **Remote Access:** Access the dashboard via your server's IP address on port 3000: `http://<SERVER_IP>:3000`.
+
+---
+
+### 💡 Un par de consejos para tu Portfolio:
+1. **Capturas de pantalla:** Si el Dashboard tiene una interfaz visual, añade una carpeta de `/screenshots` en el repo y muéstralas en el README.
+2. **Seguridad:** Asegúrate de mencionar que el archivo `.env` (si lo usas) debe estar en el `.gitignore` para no filtrar la contraseña por defecto en GitHub.
+3. **Licencia:** No olvides agregar un archivo `LICENSE` (MIT es la más común) para que se vea como un proyecto profesional completo.

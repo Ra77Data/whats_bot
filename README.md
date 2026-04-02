@@ -105,8 +105,3 @@ To deploy this in a production environment (Ubuntu/Debian VPS or local server), 
 5. **Remote Access:** Access the dashboard via your server's IP address on port 3000: `http://<SERVER_IP>:3000`.
 
 ---
-
-### 💡 Un par de consejos para tu Portfolio:
-1. **Capturas de pantalla:** Si el Dashboard tiene una interfaz visual, añade una carpeta de `/screenshots` en el repo y muéstralas en el README.
-2. **Seguridad:** Asegúrate de mencionar que el archivo `.env` (si lo usas) debe estar en el `.gitignore` para no filtrar la contraseña por defecto en GitHub.
-3. **Licencia:** No olvides agregar un archivo `LICENSE` (MIT es la más común) para que se vea como un proyecto profesional completo.
